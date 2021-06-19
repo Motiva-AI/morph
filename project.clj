@@ -20,18 +20,9 @@
                                   [circleci/bond "0.5.0"]
                                   [eftest "0.5.9"]
                                   [org.clojure/test.check "1.1.0"]
-                                  [com.gfredericks/test.chuck "0.2.11"]
-                                  [viebel/codox-klipse-theme "0.0.5"]]
+                                  [com.gfredericks/test.chuck "0.2.11"]]
 
-                   :plugins [[test2junit "1.3.3"]
-                             [lein-eftest "0.5.0"]
-                             ;; for generating API docs
-                             [lein-codox "0.10.3"]]
-
-                   :codox {:metadata {:doc/format :markdown}}
-
-                   :test2junit-output-dir "target/test2junit"
-                   :test2junit-run-ant    true
+                   :plugins [[lein-eftest "0.5.0"]]
 
                    :jvm-opts ["-XX:-OmitStackTraceInFastThrow"]}}
 

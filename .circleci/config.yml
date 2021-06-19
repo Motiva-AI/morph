@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 jobs:
   build:
@@ -9,36 +9,23 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: v1-morph-{{ checksum "project.clj" }}
+          keys:
+            - v1-dependencies-{{ checksum "project.clj" }}
+            - v1-dependencies-
 
-      - run:
-          name: Install ant
-          command: |
-            if [ ! -d "${HOME}/ant" ]
-            then
-                curl -o ${HOME}/ant.tar.bz2 http://mirror.csclub.uwaterloo.ca/apache//ant/binaries/apache-ant-1.10.7-bin.tar.bz2
-                tar jxf ${HOME}/ant.tar.bz2 -C ${HOME}
-                mv ${HOME}/apache-ant-1.10.7 ${HOME}/ant
-            fi
+      - run: lein deps
 
       - save_cache:
-          key: v1-morph-{{ checksum "project.clj" }}
           paths:
-            - ~/ant
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "project.clj" }}
 
       - run:
           name: Run tests
-          command: |
-            mkdir -p ~/test_output
-            mkdir -p ~/artifacts
-            mkdir -p ~/codox
-            scripts/run_ci.sh
+          command: lein test
 
-      - store_test_results:
-          path: ~/test_output
+workflows:
+  build:
+    jobs:
+      - build
 
-      - store_artifacts:
-          path: ~/artifacts
-
-      - store_artifacts:
-          path: ~/codox
