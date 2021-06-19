@@ -22,20 +22,7 @@ jobs:
 
       - run:
           name: Run tests
-          command: |
-            mkdir -p ~/test_output
-            mkdir -p ~/artifacts
-            mkdir -p ~/codox
-            scripts/run_ci.sh
-
-      - store_test_results:
-          path: ~/test_output
-
-      - store_artifacts:
-          path: ~/artifacts
-
-      - store_artifacts:
-          path: ~/codox
+          command: lein test
 
 workflows:
   build:
