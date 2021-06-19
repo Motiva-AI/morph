@@ -1,6 +1,6 @@
-(defproject ca.orchard-labs/morph "1.2.2-SNAPSHOT"
+(defproject ai.motiva/morph "1.3.0-SNAPSHOT"
   :description "A small collection of useful transformations"
-  :url "http://github.com/orchard-labs/morph"
+  :url "http://github.com/Motiva-AI/morph"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.9.0"]
@@ -36,10 +36,9 @@
 
                    :jvm-opts ["-XX:-OmitStackTraceInFastThrow"]}}
 
-  :repositories [["snapshots" {:url "https://clojars.org/repo"
-                               :username "j0ni"
-                               :password :env}]
-                 ["releases" {:url "https://clojars.org/repo"
-                              :creds :gpg}]]
+  :repositories [["releases" {:url           "https://clojars.org/repo"
+                              :username      "motiva-ai"
+                              :password      :env
+                              :sign-releases false}]]
 
   :deploy-repositories [["releases" :clojars]])
