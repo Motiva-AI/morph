@@ -2,10 +2,6 @@
 
 set -x
 
-# install apache ant
-export ANT_HOME=${HOME}/ant
-export PATH=${HOME}/ant/bin:${PATH}
-
 # run the tests
 lein test2junit :all
 TEST_EXIT_CODE=$?

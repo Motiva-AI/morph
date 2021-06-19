@@ -31,7 +31,6 @@
                    :codox {:metadata {:doc/format :markdown}}
 
                    :test2junit-output-dir "target/test2junit"
-                   :test2junit-run-ant    true
 
                    :jvm-opts ["-XX:-OmitStackTraceInFastThrow"]}}
 
