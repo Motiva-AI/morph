@@ -4,8 +4,7 @@
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[camel-snake-kebab "0.4.2"]
-                 [com.rpl/specter "1.1.3"]
-                 [clj-time "0.15.2"]]
+                 [com.rpl/specter "1.1.3"]]
 
   :repl-options {:init-ns user
                  :color   false}

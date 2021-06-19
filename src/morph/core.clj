@@ -1,9 +1,6 @@
 (ns morph.core
   (:require [camel-snake-kebab.core :as csk]
-            [com.rpl.specter :as specter]
-            [clj-time.coerce :as coerce])
-  (:import [org.joda.time DateTime]
-           [java.util Date]))
+            [com.rpl.specter :as specter]))
 
 (def
   ^{:doc "A Specter path for recursively selecting all the maps in a deeply
@@ -107,18 +104,6 @@
    (map #(transform-vals pred f %) coll))
   ([f coll]
    (transform-vals (constantly true) f coll)))
-
-(defn dates->joda
-  "Transform all the java.util.Date objects in an arbitrarily nested
-  structure into org.joda.time.DateTime objects."
-  [coll]
-  (transform-vals (partial instance? Date) coerce/to-date-time coll))
-
-(defn joda->dates
-  "Transform all the org.joda.time.DateTime objects in an arbitrarily
-  nested structure into java.util.Date objects."
-  [coll]
-  (transform-vals (partial instance? DateTime) coerce/to-date coll))
 
 (def keys->kebab-case
   (partial transform-keys

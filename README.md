@@ -82,26 +82,9 @@ morph.core/transform-keys
 nil
 user>
 ```
-Finally some common tasks, which use the `transform-keys` and `transform-vals` methods to do specifically useful things:
 
-```
-user> (doc morph.core/dates->joda)
--------------------------
-morph.core/dates->joda
-([coll])
-  Transform all the java.util.Date objects in an arbitrarily nested
-  structure into org.joda.time.DateTime objects.
-nil
-user> (doc morph.core/joda->dates)
--------------------------
-morph.core/joda->dates
-([coll])
-  Transform all the org.joda.time.DateTime objects in an arbitrarily
-  nested structure into java.util.Date objects.
-nil
-user>
-```
-and some which are so blindingly obvious I couldn't think of any documentation which wasn't just the function names:
+Finally some which are so blindingly obvious I couldn't think of any documentation which wasn't just the function names:
+
 ```clojure
 user> (morph.core/keys->snake_case
         {:dog :cat :thing [1 2 3] :foo {:bar-doof 9 :antEater false :one_snake true :StringBuffer :lol}})
