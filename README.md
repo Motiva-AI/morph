@@ -1,9 +1,10 @@
 # morph
 
-[![Clojars Project](https://img.shields.io/clojars/v/ca.orchard-labs/morph.svg)](https://clojars.org/ca.orchard-labs/morph)
-[![CircleCI](https://circleci.com/gh/orchard-labs/morph.svg?style=svg)](https://circleci.com/gh/orchard-labs/morph)
+[![Clojars Project](https://img.shields.io/clojars/v/ai.motiva/morph.svg)](https://clojars.org/ai.motiva/morph)
 
 A set of useful transformations, wrapping the excellent [Specter](https://github.com/nathanmarz/specter) library to do some things I need to do a lot, which Specter doesn't trivially support.
+
+This library is a fork of [orchard-labs/morph](https://github.com/orchard-labs/morph).
 
 ## Usage
 
@@ -79,7 +80,7 @@ morph.core/transform-keys
   {:charArray "some string", :VEC [1 1 1 1], :TOP-LEVEL-NUMBER 8}
   user>
 nil
-user> 
+user>
 ```
 Finally some common tasks, which use the `transform-keys` and `transform-vals` methods to do specifically useful things:
 
@@ -98,36 +99,36 @@ morph.core/joda->dates
   Transform all the org.joda.time.DateTime objects in an arbitrarily
   nested structure into java.util.Date objects.
 nil
-user> 
+user>
 ```
 and some which are so blindingly obvious I couldn't think of any documentation which wasn't just the function names:
 ```clojure
-user> (morph.core/keys->snake_case 
+user> (morph.core/keys->snake_case
         {:dog :cat :thing [1 2 3] :foo {:bar-doof 9 :antEater false :one_snake true :StringBuffer :lol}})
 {:dog :cat,
  :thing [1 2 3],
  :foo {:bar_doof 9, :ant_eater false, :one_snake true, :string_buffer :lol}}
-user> (morph.core/keys->camelCase 
+user> (morph.core/keys->camelCase
         {:dog :cat :thing [1 2 3] :foo {:bar-doof 9 :antEater false :one_snake true :StringBuffer :lol}})
 {:dog :cat,
  :thing [1 2 3],
  :foo {:barDoof 9, :antEater false, :oneSnake true, :stringBuffer :lol}}
-user> (morph.core/keys->PascalCase 
+user> (morph.core/keys->PascalCase
         {:dog :cat :thing [1 2 3] :foo {:bar-doof 9 :antEater false :one_snake true :StringBuffer :lol}})
 {:Dog :cat,
  :Thing [1 2 3],
  :Foo {:BarDoof 9, :AntEater false, :OneSnake true, :StringBuffer :lol}}
-user> (morph.core/keys->kebab-case 
+user> (morph.core/keys->kebab-case
         {:dog :cat :thing [1 2 3] :foo {:bar-doof 9 :antEater false :one_snake true :StringBuffer :lol}})
 {:dog :cat,
  :thing [1 2 3],
  :foo {:bar-doof 9, :ant-eater false, :one-snake true, :string-buffer :lol}}
-user> 
+user>
 ```
 
 ## License
 
-Copyright © 2018,2019 Jonathan Irving, Paul Lam and others.
+Copyright © 2021 Jonathan Irving, Paul Lam, and others.
 
 Distributed under the Eclipse Public License either version 1.0 or (at your
 option) any later version.
