@@ -1,4 +1,4 @@
-(defproject ai.motiva/morph "1.3.0-SNAPSHOT"
+(defproject ai.motiva/morph "1.3.0"
   :description "A small collection of useful transformations"
   :url "http://github.com/Motiva-AI/morph"
   :license {:name "Eclipse Public License"
