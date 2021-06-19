@@ -4,9 +4,9 @@
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.9.0"]
-                 [camel-snake-kebab "0.4.0"]
-                 [com.rpl/specter "1.1.0"]
-                 [clj-time "0.14.2"]]
+                 [camel-snake-kebab "0.4.2"]
+                 [com.rpl/specter "1.1.3"]
+                 [clj-time "0.15.2"]]
 
   :repl-options {:init-ns user
                  :color   false}
@@ -18,10 +18,10 @@
   :profiles {:dev {:source-paths   ["src"]
                    :test-paths     ["test"]
 
-                   :dependencies [[circleci/bond "0.3.1"]
-                                  [eftest "0.5.0"]
-                                  [org.clojure/test.check "0.10.0-alpha2"]
-                                  [com.gfredericks/test.chuck "0.2.8"]
+                   :dependencies [[circleci/bond "0.5.0"]
+                                  [eftest "0.5.9"]
+                                  [org.clojure/test.check "1.1.0"]
+                                  [com.gfredericks/test.chuck "0.2.11"]
                                   [viebel/codox-klipse-theme "0.0.5"]]
 
                    :plugins [[test2junit "1.3.3"]
